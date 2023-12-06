@@ -1,5 +1,8 @@
+import org.eclipse.microprofile.jwt.Claim;
+import org.eclipse.microprofile.jwt.Claims;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
+import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -9,6 +12,7 @@ import jakarta.ws.rs.core.MediaType;
 @RegisterRestClient(baseUri = "http://localhost:8080/calculator")
 public interface CalculatorClient {
 
+ 
     @GET
     @Path("/sum/{a}/{b}")
     @Produces(MediaType.TEXT_PLAIN)
